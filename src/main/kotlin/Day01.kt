@@ -21,5 +21,11 @@ fun main() {
     }.sum()
 
     println(sum)
+
+    val similarityScore = leftList.groupingBy { it }.eachCount().map{ (id, count) ->
+        id.times(rightList.count { it == id }).times(count)
+    }.sum()
+
+    println(similarityScore)
 }
 
