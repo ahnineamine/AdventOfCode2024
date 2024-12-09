@@ -1,0 +1,25 @@
+package org.example
+
+import kotlin.math.abs
+
+fun main() {
+    val leftList =mutableListOf<Long>()
+    val rightList =mutableListOf<Long>()
+    readInput("input").forEach{ line ->
+        line.split(" ").let{
+            leftList.add(it.first().toLong())
+            rightList.add(it.last().toLong())
+        }
+    }
+
+    require(leftList.size == rightList.size){
+        throw Exception("the two lists must have the same size")
+    }
+
+    val sum = leftList.sorted().zip(rightList.sorted()){ x, y ->
+        abs(x-y)
+    }.sum()
+
+    println(sum)
+}
+
