@@ -5,7 +5,7 @@ import kotlin.math.abs
 fun main() {
     val leftList =mutableListOf<Long>()
     val rightList =mutableListOf<Long>()
-    readInput("input").forEach{ line ->
+    readInput("input01").forEach{ line ->
         line.split(" ").let{
             leftList.add(it.first().toLong())
             rightList.add(it.last().toLong())
